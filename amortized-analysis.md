@@ -48,9 +48,7 @@ The simplest approach is the **Aggregate Method**. We calculate the total cost o
 **Example with dynamic arrays (doubling strategy):**  
 When an array doubles in size, the expensive resize operation costs *O(n)*. However, after a resize, the next *n* appends are cheap (*O(1)* each). Over a long sequence, the expensive resizes become infrequent enough that the average cost per append drops to **O(1)**.
 
-\[
-\text{Amortized Cost} = \frac{1}{n} \sum_{i=1}^{n} c_i
-\]
+$$\text{Amortized Cost} = \frac{1}{n} \sum_{i=1}^{n} c_i$$
 
 *Figure 1: Aggregate Method — total cost divided by number of operations*
 
@@ -65,9 +63,7 @@ In the dynamic array example:
 
 When a resize occurs, the saved credits cover the entire cost of copying elements. This way, every operation appears to cost a constant amount, even though some operations are more expensive behind the scenes.
 
-\[
-\text{Charge per append} = 2 \quad \Big(1 \text{ for the actual append} + 1 \text{ saved for future resize}\Big)
-\]
+$$\text{Charge per append} = 2 \quad \Big(1 \text{ for the actual append} + 1 \text{ saved for future resize}\Big)$$
 
 *Figure 2: Accounting (Banker’s) Method — credit system for dynamic arrays*
 
@@ -77,17 +73,13 @@ The **Potential Method** is the most mathematically elegant. It uses a **potenti
 
 The amortized cost of an operation is defined as:
 
-\[
-\text{Amortized Cost} = c_i + \Delta \Phi
-\]
+$$\text{Amortized Cost} = c_i + \Delta \Phi$$
 
 *Figure 3: Potential Method — amortized cost equals actual cost plus change in potential*
 
 For dynamic arrays with doubling, a common potential function is:
 
-\[
-\Phi = 2 \times \text{current size} - \text{current capacity}
-\]
+$$\Phi = 2 \times \text{current size} - \text{current capacity}$$
 
 *Figure 4: Potential function for dynamic arrays with 2× growth*
 
@@ -121,9 +113,7 @@ As you can see, even though some operations are expensive, the average cost per 
 **1. Aggregate Method**  
 We simply sum the total cost of *n* operations and divide by *n*:
 
-\[
-\text{Amortized Cost} = \frac{1}{n} \sum_{i=1}^{n} c_i
-\]
+$$\text{Amortized Cost} = \frac{1}{n} \sum_{i=1}^{n} c_i$$
 
 For doubling arrays, the total cost of *n* appends is less than *2n*, so the amortized cost is **O(1)**.
 
@@ -137,15 +127,11 @@ When a resize occurs, the saved credits pay for the entire copy operation. This 
 **3. Potential Method**  
 We define a potential function Φ that tracks “stored energy”:
 
-\[
-\Phi = 2 \times (\text{current size}) - (\text{current capacity})
-\]
+$$\Phi = 2 \times (\text{current size}) - (\text{current capacity})$$
 
 The amortized cost of each operation becomes:
 
-\[
-\text{Amortized Cost} = \text{Actual Cost} + \Delta \Phi
-\]
+$$\text{Amortized Cost} = \text{Actual Cost} + \Delta \Phi$$
 
 This potential function elegantly balances the expensive resizes with the cheap appends that follow them.
 
