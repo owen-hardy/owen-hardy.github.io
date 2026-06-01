@@ -29,10 +29,9 @@ A clear, concise explanation of what this endpoint does, why it exists, and when
 
 ```json
 {
-  "id": 1,
-  "name": "Leanne Graham",
-  "username": "Bret",
-  "email": "Sincere@april.biz"
+  "field_name": "value",
+  "another_field": 123,
+  "is_active": true
 }
 ```
 
@@ -40,7 +39,7 @@ A clear, concise explanation of what this endpoint does, why it exists, and when
 
 ### Success Response
 
-Status Code: 200 OK
+**Status Code: 200 OK**
 
 ```json
 {
@@ -53,19 +52,19 @@ Status Code: 200 OK
 
 ### Error Responses
 
-| Status Code   | Description           | Example Body                            |
-|---------------|-----------------------|-----------------------------------------|
-|`400`          | Bad Request           | { "error": "Invalid input data" }       |
-|`401`          | Unauthorized          | { "error": "Missing or invalid token" } |
-|`404`          | Not Found             | { "error": "Resource not found" }       |
-|`429`          | Too Many Requests     | { "error": "Rate limit exceeded" }      |
-|`500`          | Internal Server Error | { "error": "Unexpected server error" }  |
+| Status Code | Description           | Example Body                            |
+|-------------|-----------------------|-----------------------------------------|
+| 400         | Bad Request           | { "error": "Invalid input data" }       |
+| 401         | Unauthorized          | { "error": "Missing or invalid token" } |
+| 404         | Not Found             | { "error": "Resource not found" }       |
+| 429         | Too Many Requests     | { "error": "Rate limit exceeded" }      |
+| 500         | Internal Server Error | { "error": "Unexpected server error" }  |
 
 ## Code Samples
 
 ### cURL
 
-```
+```bash
 curl -X GET "https://api.example.com/path/to/endpoint" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json"
@@ -73,7 +72,7 @@ curl -X GET "https://api.example.com/path/to/endpoint" \
 
 ### Python
 
-```py
+```python
 import requests
 
 headers = {
@@ -92,7 +91,7 @@ else:
 
 ### JavaScript (Fetch)
 
-```js
+```javascript
 fetch('https://api.example.com/path/to/endpoint', {
   method: 'GET',
   headers: {
@@ -104,19 +103,6 @@ fetch('https://api.example.com/path/to/endpoint', {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
