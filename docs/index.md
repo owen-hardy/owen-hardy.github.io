@@ -12,6 +12,9 @@ Recent Philosophy graduate from the University of California, Davis. I’m curre
 - **[Amortized Analysis Explained: How Dynamic Arrays Achieve Constant-Time Appends](amortized-analysis.md)**  
   Deep dive into amortized analysis using dynamic arrays, covering the Aggregate, Accounting, and Potential methods with real-world examples.
 
+- **[RESTful API Documentation Template & Best Practices](api-doc-template.md)**  
+  Professional Markdown template for creating high-quality RESTful API documentation. Includes well-organized sections for endpoint descriptions, authentication, parameters, request/response examples, error codes, and ready-to-use code samples across cURL, Python, and JavaScript. Built to support both internal and external developer documentation needs.
+
 ## Projects
 
 - **[Hack Assembler](hack-assembler/)**  
