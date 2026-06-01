@@ -28,14 +28,13 @@ A clear, concise explanation of what this endpoint does, why it exists, and when
 ### Request Body (POST, PUT, PATCH)
 
 ```json
-[
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz"
-  }
-]
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz"
+}
+```
 
 ## Response
 
@@ -54,13 +53,13 @@ Status Code: 200 OK
 
 ### Error Responses
 
-| Status Code | Description           | Example Body                            |
-|-------------------------------------------------------------------------------|
-|400          | Bad Request           | { "error": "Invalid input data" }       |        
-|401          | Unauthorized          | { "error": "Missing or invalid token" } |
-|404          | Not Found             | { "error": "Resource not found" }       |
-|429          | Too Many Requests     | { "error": "Rate limit exceeded" }      |
-|500          | Internal Server Error | { "error": "Unexpected server error" }  |
+| Status Code   | Description           | Example Body                            |
+|---------------|-----------------------|-----------------------------------------|
+|`400`          | Bad Request           | { "error": "Invalid input data" }       |
+|`401`          | Unauthorized          | { "error": "Missing or invalid token" } |
+|`404`          | Not Found             | { "error": "Resource not found" }       |
+|`429`          | Too Many Requests     | { "error": "Rate limit exceeded" }      |
+|`500`          | Internal Server Error | { "error": "Unexpected server error" }  |
 
 ## Code Samples
 
@@ -75,8 +74,7 @@ curl -X GET "https://api.example.com/path/to/endpoint" \
 ### Python
 
 ```py
-{
-    import requests
+import requests
 
 headers = {
     "Authorization": "Bearer YOUR_TOKEN",
@@ -90,7 +88,6 @@ if response.status_code == 200:
     print(data)
 else:
     print(f"Error {response.status_code}: {response.text}")
-}
 ```
 
 ### JavaScript (Fetch)
@@ -107,10 +104,6 @@ fetch('https://api.example.com/path/to/endpoint', {
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
 ```
-
-
-
-
 
 
 
