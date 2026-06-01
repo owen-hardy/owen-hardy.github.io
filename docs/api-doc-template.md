@@ -28,13 +28,14 @@ A clear, concise explanation of what this endpoint does, why it exists, and when
 ### Request Body (POST, PUT, PATCH)
 
 ```json
-{
-  "field_name": "value",
-  "another_field": 123,
-  "nested_object": {
-    "key": "value"
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz"
   }
-}
+]
 
 ## Response
 
@@ -49,6 +50,7 @@ Status Code: 200 OK
   "created_at": "2026-05-28T12:00:00Z",
   "status": "active"
 }
+```
 
 ### Error Responses
 
@@ -62,16 +64,19 @@ Status Code: 200 OK
 
 ## Code Samples
 
-
 ### cURL
 
+```
 curl -X GET "https://api.example.com/path/to/endpoint" \
   -H "Authorization: Bearer YOUR_TOKEN" \
   -H "Content-Type: application/json"
+```
 
 ### Python
 
-import requests
+```py
+{
+    import requests
 
 headers = {
     "Authorization": "Bearer YOUR_TOKEN",
@@ -85,9 +90,12 @@ if response.status_code == 200:
     print(data)
 else:
     print(f"Error {response.status_code}: {response.text}")
+}
+```
 
 ### JavaScript (Fetch)
 
+```js
 fetch('https://api.example.com/path/to/endpoint', {
   method: 'GET',
   headers: {
@@ -98,7 +106,7 @@ fetch('https://api.example.com/path/to/endpoint', {
 .then(response => response.json())
 .then(data => console.log(data))
 .catch(error => console.error('Error:', error));
-
+```
 
 
 
