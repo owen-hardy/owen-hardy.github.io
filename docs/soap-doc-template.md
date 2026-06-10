@@ -72,6 +72,28 @@ http://example.com/TransferService/InitiateInstantTransfer
 </soap:Envelope>
 ```
 
+### Key Response Parameters
+
+| Element         | Type    | Description                         |
+|-----------------|---------|-------------------------------------|
+| `TransferId`    | string  | Unique transfer identifier          |
+| `Status`        | string  | `COMPLETED`, `PENDING`, or `FAILED` |
+| `AmountInCents` | integer | Amount transferred (in cents)       |
+| `FeeInCents`    | integer | Fee charged (if any)                |
+
+## Error Handling
+SOAP services return errors using standard SOAP Faults.
+
+### Common SOAP Faults
+
+| Fault Code                 | Fault String               | Description                        | Common Cause   |
+|----------------------------|----------------------------|------------------------------------|----------------|
+| `Client.InvalidInput`      | Invalid request parameters | Missing or malformed fields        | Bad input data |
+| `Client.InsufficientFunds` | Insufficient funds         | Source account balance too low     | Low balance    |
+| `Client.Unauthorized`      | Authentication failed      | Invalid credentials or permissions | Bad token      |
+| `Client.RateLimitExceeded` | Rate limit exceeded        | Too many requests                  | Throttling     |
+| `Server.InternalError`     | Internal server error      | Unexpected backend issue           | System failure |
+
 ## Code Samples
 
 ### cURL
