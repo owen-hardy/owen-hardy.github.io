@@ -1,26 +1,25 @@
 # InitiateInstantTransfer
 
-## Service
+**Service**
 TransferService v2
 
-## Description
+#**Description**
 Initiates an instant, irrevocable transfer of funds between two accounts. Transfers are typically completed in under 3 seconds when all validation checks pass.
 
-## WSDL Location
+**WSDL Location**
 https://api.example.com/services/TransferService?wsdl
 
-## SOAP Version
+**SOAP Version**
 SOAP 1.2 over HTTPS
-
-## Authentication
+**Authentication**
 WS-Security UsernameToken (digest) or OAuth 2.0 Bearer Token in SOAP Header
 
 ## Request
 
-### SOAP Action
-http://example.com/TransferService/InitiateInstantTransfer
+**SOAP Action**
+`http://example.com/TransferService/InitiateInstantTransfer`
 
-## Request Body Example
+**Request Body Example**
 
 ```xml
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
@@ -41,7 +40,7 @@ http://example.com/TransferService/InitiateInstantTransfer
 </soap:Envelope>
 ```
 
-## Key Request Parameters
+**Key Request Parameters**
 
 | Element                | Type    | Required | Description                                       |
 |------------------------|---------|----------|---------------------------------------------------|
@@ -54,7 +53,7 @@ http://example.com/TransferService/InitiateInstantTransfer
 
 ## Response
 
-### Success Response
+**Success Response**
 
 ``` xml
 <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
@@ -72,7 +71,7 @@ http://example.com/TransferService/InitiateInstantTransfer
 </soap:Envelope>
 ```
 
-### Key Response Parameters
+**Key Response Parameters**
 
 | Element         | Type    | Description                         |
 |-----------------|---------|-------------------------------------|
@@ -84,7 +83,7 @@ http://example.com/TransferService/InitiateInstantTransfer
 ## Error Handling
 SOAP services return errors using standard SOAP Faults.
 
-### Common SOAP Faults
+**Common SOAP Faults**
 
 | Fault Code                 | Fault String               | Description                        | Common Cause   |
 |----------------------------|----------------------------|------------------------------------|----------------|
@@ -96,7 +95,7 @@ SOAP services return errors using standard SOAP Faults.
 
 ## Code Samples
 
-### cURL
+**cURL**
 
 ``` bash
 curl -X POST https://api.example.com/services/TransferService \
@@ -104,7 +103,7 @@ curl -X POST https://api.example.com/services/TransferService \
   -H "SOAPAction: http://example.com/TransferService/InitiateInstantTransfer" \
   -d @request.xml
 ```
-### Python (zeep)
+**Python (zeep)**
 
 ``` python
 from zeep import Client
@@ -125,7 +124,7 @@ response = client.service.InitiateInstantTransfer(
 print(response)
 ```
 
-### JavaScript / Node.js
+**JavaScript / Node.js**
 
 ``` javascript
 const soap = require('soap');
