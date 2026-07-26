@@ -20,12 +20,6 @@ Recent Philosophy graduate from the University of California, Davis. I’m curre
 - **[Hack Assembler](hack-assembler/)**  
   A complete two-pass Hack Assembler written in Python as part of the Nand to Tetris course. Includes Parser, Symbol Table, Code, and Main Assembler modules.
 
-## Currently Learning
-
-- Multivariable Calculus & Differential Equations
-- UC San Diego Data Structures and Algorithms Specialization
-- Preparing for CU Boulder’s MS in Artificial Intelligence
-
 ---
 
-*Last updated: 2026-05-27*
+*Last updated: 2026-07-26*
